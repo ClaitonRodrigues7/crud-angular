@@ -26,14 +26,14 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CourseController {
 
-   
+
     private final CourseRepository courseRepository;
 
-    @GetMapping 
+    @GetMapping
     public List<Course> list() {
         return courseRepository.findAll();
     }
-   
+
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Course create(@RequestBody Course course) {
